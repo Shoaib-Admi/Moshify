@@ -4,6 +4,8 @@
   --color-accent: #ff3400;
   --color-heading: #1b0760;
   --color-body: #918ca4;
+  --color-border: #ccc;
+  --border-radius: 30px;
 }
 *,
 *::after,
@@ -195,7 +197,7 @@ a {
   background: #00c8eb;
 }
 .btn--accent {
-  width: 40rem;
+  /* width: 40rem; */
   background: var(--color-accent);
   color: #fff;
 }
@@ -226,5 +228,38 @@ a {
   }
   .btn--secondary {
     width: 23rem;
+  }
+}
+
+/* inputs */
+
+.input {
+  padding: 1.5rem 3.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  outline: 0;
+  color: var(--color-heading);
+  font-size: 2rem;
+}
+::placeholder {
+  color: #cdcbd7;
+}
+.input-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: flex;
+}
+.input-group .input {
+  border: 0;
+  flex-grow: 1;
+  /* padding: 1.5rem 1rem;  use when element befor input*/
+}
+.input-group .btn {
+  margin: 4px;
+}
+
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 1.5rem;
   }
 }
