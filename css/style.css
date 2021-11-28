@@ -189,6 +189,7 @@ a {
   cursor: pointer;
   font-size: 1.8rem;
   font-weight: 600;
+  outline: 0;
   padding: 2rem 3rem;
   text-transform: uppercase;
   white-space: nowrap;
@@ -235,6 +236,12 @@ a {
 .btn--outline:hover {
   background: var(--color-heading);
   color: #fff;
+}
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 
 @media screen and (min-width: 1024px) {
@@ -631,5 +638,39 @@ a {
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+/* Domain Blocks */
+
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem 0;
+}
+
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    max-width: 700px;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-rows: repeat();
+    margin: 0 auto;
+    font-size: 1.7rem;
+  }
+  .block-domain__prices .badge {
+    font-size: 1.7rem;
+  }
+  .block-domain .input-group {
+    max-width: 670px;
+    margin: 4rem auto;
   }
 }
