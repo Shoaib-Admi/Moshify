@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 /* Typography */
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
 html {
   font-size: 62.5%;
 }
@@ -40,6 +44,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -128,7 +133,6 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-heading);
 }
 .list--inline .list__item {
   display: inline-block;
@@ -138,6 +142,7 @@ a {
 .list--tick {
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
+  color: var(--color-heading);
 }
 .list--tick .list__item {
   padding-left: 0.5rem;
@@ -383,10 +388,11 @@ a {
     font-size: 1.7rem;
   }
 }
-/* Media Objects */
+/* Media */
 
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -560,18 +566,22 @@ a {
 }
 .block--dark {
   background: #000;
-  color: #fff;
+  color: #7b858b;
 }
-.block--dark .block__heading {
+/* In dark block this type of heading always white */
+/* Don't need to remember anythings */
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: #fff;
 }
 
 .block--skewed-left {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
   padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
   padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
@@ -634,9 +644,6 @@ a {
 }
 
 /* Hero */
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
-}
 .hero__image {
   width: 100%;
 }
@@ -708,6 +715,9 @@ a {
 .feature__image {
   width: 100%;
 }
+.feature:first-of-type {
+  margin-top: 6rem;
+}
 .feature__heading {
   margin-top: 1rem 0;
 }
@@ -716,7 +726,33 @@ a {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
   }
-  .feature:first-of-type {
-    margin-top: 6rem;
+}
+
+/* Showcase */
+.block-showcase__image > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    /* 
+      If (1fr 1fr) the avialable space should 
+       be devided into two slices
+       and each colum take one slice
+        */
+    /* 
+       (50% 50%) thats means 50% of the
+       width of the container. so width of
+       the column is not determined by the content
+        */
+    grid-template-columns: 50% 50%;
+  }
+  .block-showcase__image {
+    justify-self: end;
+  }
+  .block-showcase__image > img {
+    width: auto;
+    /* so the image no larger than 700px */
+    max-width: 700px;
   }
 }
