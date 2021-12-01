@@ -1,0 +1,22 @@
+{
+  "name": "admify",
+  "version": "1.0.0",
+  "description": "Admify - Deploy your website under 60s.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shoaib-Admi/Moshify.git"
+  },
+  "author": "shoaib-admi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shoaib-Admi/Moshify/issues"
+  },
+  "homepage": "https://github.com/Shoaib-Admi/Moshify#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
